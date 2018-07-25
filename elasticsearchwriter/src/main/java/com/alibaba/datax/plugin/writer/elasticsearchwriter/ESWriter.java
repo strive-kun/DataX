@@ -326,7 +326,8 @@ public class ESWriter extends Writer {
                             data.put(columnName, dataList);
                         } else {
                             for (int pos = 0; pos < dataList.length; pos++) {
-                                dataList[pos] = getDateStr(columnList.get(i), column);
+                                StringColumn date = new StringColumn(dataList[pos]);
+                                dataList[pos] = getDateStr(columnList.get(i), date);
                             }
                             data.put(columnName, dataList);
                         }
